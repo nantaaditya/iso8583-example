@@ -1,0 +1,9 @@
+server:
+  port: 1000
+
+management:
+  endpoint:
+    metrics.enabled: true
+  endpoints:
+    web:
+      exposure.include: '*'

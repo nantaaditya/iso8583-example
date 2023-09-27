@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mux name="simulator_mux" class="org.jpos.q2.iso.QMUX">
+	<in>channel_out</in>
+	<out>channel_in</out>
+	<ready>simulator_channel.ready</ready>
+	<request-listener
+		class="com.iso8583.simulator.service.jpos.IsoMuxListener"
+		logger="Q2"
+		realm="mux-listener"
+	>
+		<property name="queue" value="simulator_queue" />
+		<property name="spaceTimeout" value="10000"/>
+	</request-listener>
+</mux>

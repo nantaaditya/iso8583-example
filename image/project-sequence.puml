@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+IS08583Simulator -> ISO8583Core: hit /api/request
+ISO8583Core -> ISO8583Core: convert JSON into ISO8583 message
+ISO8583Core -> CoreBanking: send ISO8583 request
+CoreBanking -> CoreBanking: compose response
+CoreBanking --> ISO8583Core: return JSON message
+ISO8583Core -> ISO8583Core: convert JSON into ISO8583 message
+ISO8583Core --> IS08583Simulator: return ISO8583 message
+IS08583Simulator -> IS08583Simulator: convert ISO8583 message into JSON
+@enduml
